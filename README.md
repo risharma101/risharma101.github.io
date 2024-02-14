@@ -15,6 +15,3 @@ To view Web Page:
 ### Deployment Commands
 - `npm start`
 - `npm run build`
-
-# `npm start`
-- this command allows you to see how certain things are reviewed 
