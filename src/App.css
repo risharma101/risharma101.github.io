@@ -1,0 +1,92 @@
+.App {
+  text-align: center;
+  background-color: #141414;
+}
+
+.App-header {
+  background-color: #141414;
+  padding: 80px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-bar {
+  background-color: #141414;
+  padding: 80px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1, h2 {
+  font-family: Arial, sans-serif;
+}
+
+section {
+  margin: 20px 0;
+}
+
+/* CSS code for the personal website */
+
+/* Body styles */
+body {
+  background-color: #141414;
+  font-family: Arial, sans-serif;
+  /* background-color: #f5f5f5; */
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+header {
+  /* background-color: #333; */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Description section styles */
+.description {
+  color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+/* Projects section styles */
+.projects {
+  /* background-color: #b93333; */
+  padding: 40px;
+  text-align: center;
+  color: white;
+}
+
+/* Sliding selection styles */
+.projects .slider {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+}
+
+.projects .slider .project {
+  flex: 0 0 300px;
+  margin-right: 20px;
+  /* background-color: #fff; */
+  border-radius: 5px;
+  padding: 20px;
+  scroll-snap-align: start;
+}
+
+/* Footer styles */
+footer {
+  /* background-color: #333; */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+

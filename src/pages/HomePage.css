@@ -1,0 +1,26 @@
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 100px;
+}
+
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* flex-direction: column; */
+    width: 400px;
+}
+
+body {
+    color: white;
+    padding: '40px' '20px';
+}
