@@ -14,7 +14,7 @@
 
 .nav-bar {
   background-color: #141414;
-  padding: 80px;
+  padding: 80px 0px 20px 0px;
   color: white;
   display: flex;
   align-items: center;

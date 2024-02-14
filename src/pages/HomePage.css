@@ -2,25 +2,40 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.about-me {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 100px;
+    padding: 0px;
 }
 
 .about-section {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    padding: 0px 40px;
+}
 
-    /* flex-direction: column; */
-    width: 400px;
+@media (max-width: 600px) {
+    .about-section {
+      flex-direction: column;
+    }
+  }
+
+.about-column {
+    flex: 1;
+    padding: 20px;
+}
+
+.about-img {
+    flex: 0 1 auto;
+    width: 200px;
+}
+
+.about-img img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
 }
 
 body {
     color: white;
-    padding: '40px' '20px';
 }
