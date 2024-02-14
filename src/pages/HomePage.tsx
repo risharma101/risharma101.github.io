@@ -1,6 +1,9 @@
 import React from 'react';
 import './HomePage.css';
 import profilepic from '../assets/profilepic.jpg';
+import SkillButton from '../components/SkillButton';
+import {ReactComponent as CPPLogo} from '../assets/c-plus-plus-svgrepo-com.svg'; // Example path to a React logo SVG
+import {ReactComponent as JavaLogo} from '../assets/java-logo-svgrepo-com.svg';
 
 const HomePage = () => {
     return (
@@ -24,7 +27,39 @@ const HomePage = () => {
                     <p>I'm Rishabh!. Feel free to expand this section with more information about yoursel.</p>
                 </div>
             </div>
-            <footer style={{ marginTop: 'auto', padding: '20px 0', color: 'white', width: '100%', textAlign: 'center' }}>
+            <div className="skills-section">
+                <h2>Skills</h2>
+                <div style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    justifyContent: 'center',
+                    gap: '20px', // Adjusts the space between logos
+                }}>
+                    <div>
+                        <SkillButton svg={JavaLogo} label="Java" />
+                    </div>
+                    <div>
+                        <SkillButton svg={CPPLogo} label="C++" />
+                    </div>
+                    <div>
+                        <SkillButton svg={JavaLogo} label="Java" />
+                    </div>
+                    <div>
+                        <SkillButton svg={JavaLogo} label="Java" />
+                    </div>
+                    <div>
+                        <SkillButton svg={JavaLogo} label="Java" />
+                    </div>
+                    <div>
+                        <SkillButton svg={JavaLogo} label="Java" />
+                    </div>
+
+                    {/* Another Skill Item */}
+
+                    {/* Add more skill items here */}
+                </div>
+            </div>
+            <footer>
                 Designed and built by Rishabh Sharma
             </footer>
         </>

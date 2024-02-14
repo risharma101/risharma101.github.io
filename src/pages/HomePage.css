@@ -38,6 +38,22 @@
     border-radius: 5px;
 }
 
+.skills-section {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0px 40px;
+}
+
+footer {
+    margin-top: auto;
+    padding: 20px 0px;
+    color: #7f7a7a;
+    width: 100%;
+    text-align: center;
+}
+
 @media (max-width: 800px) {
     .about-section {
       flex-direction: column;
