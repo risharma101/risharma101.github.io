@@ -1,5 +1,8 @@
 # Personal Portfolio
 
+### A personal portfolio of my projects and skills built with TypeScript and React.js
+(published at rishabhsharma.xyz)
+
 To view Web Page:
 - Run `npm install` on both the backend repository (csco api) and the front end (csco)
 - Then run `npm start` on both of them
