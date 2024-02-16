@@ -20,11 +20,28 @@
     flex-direction: column;
     align-items: center;
     padding: 0px 40px;
+    font-size: 20px;
 }
 
 .about-column a {
-    padding: 20px;
+    display: block;
+    /* Makes each anchor and paragraph element occupy its own line */
+    margin-bottom: 0px;
+    margin-top: 0px;
+    color: #FFFFFF;
 }
+
+.about-column p {
+    font-size: 12px;
+    display: block;
+    /* Makes each anchor and paragraph element occupy its own line */
+    margin-bottom: 20px;
+    /* Adds space below each anchor and paragraph */
+    margin-top: 0px;
+    color: #FFFFFF;
+
+}
+
 
 .about-img {
     flex: 0 1 auto;
@@ -56,11 +73,13 @@ footer {
 
 @media (max-width: 1000px) {
     .about-section {
-      flex-direction: column;
+        flex-direction: column;
     }
+
     .about-column {
         max-width: 90vw;
     }
+
     .about-column a {
         padding: 5px;
     }
@@ -79,4 +98,3 @@ body {
     /* text-align: center; */
     margin: 0px 100px;
 }
-

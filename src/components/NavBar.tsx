@@ -46,7 +46,7 @@ const NavBar: React.FC = () => {
     alignItems: 'center',
     justifyContent: 'center',
     fontSize: '14px',
-    backgroundColor: location.pathname === path ? '#1D1D1D' : '#141414', // Active page has different color
+    backgroundColor: location.pathname === path ? '#3c3c3c' : '#141414', // Active page has different color
     color: 'white',
   });
 
