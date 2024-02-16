@@ -11,22 +11,22 @@ const HomePage = () => {
     return (
         <>
             <div className='title'>
-                <h1>Rishabh Sharma</h1>
+                <h2>Rishabh Sharma</h2>
 
             </div>
             <div className='about-section'>
                 <div className='about-column'>
                     <a href='https://github.com/risharma101' target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <FaGithub size={40}/>
+                        <FaGithub size={40} />
                     </a>
                     <p className='link-descriptor'>GitHub</p>
                     <a href='https://www.linkedin.com/in/rishabhsharma101/' target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <FaLinkedin size={40}/> 
+                        <FaLinkedin size={40} />
                     </a>
                     <p className='link-descriptor'>LinkedIn</p>
 
                     <a href='mailto:rishabhsharma@ucla.edu' target="_blank" rel="noopener noreferrer" aria-label="Mail">
-                        <IoMdMail size={40}/> 
+                        <IoMdMail size={40} />
                     </a>
                     <p className='link-descriptor'>rishabhsharma@ucla.edu</p>
                 </div>
@@ -34,7 +34,7 @@ const HomePage = () => {
                     <img src={profilepic} alt="Your Name" />
                 </div>
                 <div className='about-column'>
-                    <h6>I'm Rishabh!. I have interest and experience in Backend & Full-Stack Software Development and AI Technologies.</h6>
+                    <h6>I'm Rishabh!. I'm a CS major at UCLA with interest and experience in Backend & Full-Stack Software Development and AI/ML Technologies.</h6>
                 </div>
             </div>
             {/* <div className="skills-section">
@@ -67,11 +67,31 @@ const HomePage = () => {
             </div> */}
 
             <div className='project-section'>
-                <h2>Current Work</h2>
+                <h3>Current Projects</h3>
                 <div className='project-slider'>
                     <FullstackProjects />
                 </div>
 
+            </div>
+
+            <div className='researchskills-section'>
+                <div className='researchskills-column'>
+                    <h3>Research</h3>
+                    <p>
+                    </p>
+
+                </div>
+                <div className='researchskills-column'>
+                    <h3>Skills</h3>
+                    <p>
+                        <b>Languages:</b> C++, C,  Python, Java, JavaScript, SQL<br />
+                        <b>UI Frameworks:</b> React, Express, Django, Flask, Flutter <br />
+                        <b>AI Frameworks:</b>OpenCV, PyTorch, TensorFlow<br />
+                        <b>Cloud/Containers:</b> Docker, Kubernetes, Google Cloud<br />
+                        <b>General Tools:</b> Git, Bash, VSCode, Xcode, IntelliJ
+                    </p>
+
+                </div>
             </div>
             <footer>
                 Designed and built by Rishabh Sharma
