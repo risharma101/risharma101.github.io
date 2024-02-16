@@ -1,12 +1,32 @@
 import React from 'react';
-import '../App.css';
+import './ProjectPage.css';
+import FullstackProjects from '../components/FullstackProjects';
 
 const ProjectPage = () => {
   return (
-    <div style={{margin: '20px 0'}}>
-      <h2>Projects</h2>
-      {/* Placeholder for project slider */}
-      <div>Your project slider here</div>
+    <div>
+      <h2 className='title'>Projects</h2>
+      <div className='project-section'>
+        <h3>Fullstack Projects</h3>
+        <div className='project-slider'>
+          <FullstackProjects />
+        </div>
+
+      </div>
+      <div className='project-section'>
+        <h3>AI Projects</h3>
+        <div className='project-slider'>
+          <FullstackProjects />
+        </div>
+
+      </div>
+      <div className='project-section'>
+        <h3>Data Structures & Algorithms Projects</h3>
+        <div className='project-slider'>
+          <FullstackProjects />
+        </div>
+
+      </div>
     </div>
   );
 };
