@@ -39,10 +39,10 @@
 }
 
 /* Target all slides and apply a fade effect */
-.slick-slide {
-    opacity: 0.5; /* Fade out all slides */
-    transition: opacity 0.5s ease; /* Smooth transition for the fade effect */
-  }
+/* .slick-slide {
+    opacity: 0.5; 
+    transition: opacity 0.5s ease; 
+} */
   
   /* Ensure the centered slide is fully opaque */
   .slick-center {

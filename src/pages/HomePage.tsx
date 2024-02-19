@@ -4,7 +4,6 @@ import profilepic from '../assets/profilepic.jpg';
 import FullstackProjects from '../components/FullstackProjects';
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 import { IoMdMail } from "react-icons/io"
-import VideoLoop from "../components/VideoLoop";
 import ProjectSliderVid from '../components/ProjectSliderVid';
 
 
@@ -68,15 +67,15 @@ const HomePage = () => {
                 </div>
             </div> */}
 
-            <div className='project-section'>
+            {/* <div className='project-section'>
                 <h3>Current Projects</h3>
                 <div className='project-slider'>
                     <FullstackProjects />
                 </div>
 
-            </div>
+            </div> */}
 
-            <div className='researchskills-section'>
+            {/* <div className='researchskills-section'>
                 <div className='researchskills-column'>
                     <h3>Research</h3>
                     <p>
@@ -94,11 +93,9 @@ const HomePage = () => {
                     </p>
 
                 </div>
-            </div>
-            <div>
-                <VideoLoop />
-            </div>
-            <div>
+        </div> */}
+            <div style={{textAlign: 'center'}}>
+                <h3>Featured Projects </h3>
                 <ProjectSliderVid />
             </div>
             <footer>

@@ -3,8 +3,16 @@ import "slick-carousel/slick/slick-theme.css";
 import './ProjectSlider.css';
 import React from 'react';
 import Slider from 'react-slick';
-import img from '../assets/profilepic.jpg';
-import vid from '../assets/percolation-demo-vid.mp4';
+import cscodemo from '../assets/csco-demo.png';
+import chatclonedemo from '../assets/chatclone-demo.png';
+// @ts-ignore
+import percolation_vid from '../assets/percolation-demo-vid.mov';
+// @ts-ignore
+import seamcarving_vid from '../assets/seamcarving-demo-vid.mov';
+// @ts-ignore
+import peachparty_vid from '../assets/peachparty-demo-vid.mov';
+// @ts-ignore
+import notefy_vid from '../assets/notefy-demo-vid.mov';
 
 // export interface Slide {
 //   video: string;
@@ -23,7 +31,7 @@ const ProjectSliderVid: React.FC = ({ }) => {
   // Slider settings
   const settings = {
     className: "center",
-    centerMode: true,
+    // centerMode: true,
     infinite: true,
     centerPadding: '15%',
     slidesToShow: 1,
@@ -46,9 +54,12 @@ const ProjectSliderVid: React.FC = ({ }) => {
   };
 
   const videoUrls = [
-    '../assets/percolation-demo-vid.mp4',
-    '../assets/percolation-demo-vid.mp4',
-    '../assets/percolation-demo-vid.mp4',
+    percolation_vid,
+    peachparty_vid,
+    seamcarving_vid,
+    notefy_vid,
+    cscodemo,
+    chatclonedemo,
     // Add more video URLs as needed
   ];
 
@@ -61,12 +72,9 @@ const ProjectSliderVid: React.FC = ({ }) => {
           {videoUrls.map((videoFile, index) => (
             <div key={index} className="slide-container">
               <div className="slide-content">
-              <p>{videoFile}</p>
-              <video src={vid} autoPlay loop style={{ width: '100%', maxHeight: '100%' }} />
-              <img src={img} alt={"Image"} />
-                {/* <p>{slide.caption}</p> */}
+              {videoFile.substring(videoFile.length-3) == "mov" && (<video src={videoFile} autoPlay loop style={{ width: '100%', maxHeight: '500px' }} />)}
+              {videoFile.substring(videoFile.length-3) != "mov" && (<img src={videoFile} style={{ height: '500px', maxHeight: '500px' }}/>)}
               </div>
-
             </div>
           ))}
           
