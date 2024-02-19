@@ -5,6 +5,7 @@ import React from 'react';
 import Slider from 'react-slick';
 
 export interface Slide {
+  video?: string;
   img: string;
   caption: string;
   // Add more fields here as needed, e.g., id, description, etc.

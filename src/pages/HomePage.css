@@ -78,6 +78,7 @@ footer {
 
     .about-column {
         max-width: 90vw;
+        flex-direction: row;
     }
 
     .about-column a {

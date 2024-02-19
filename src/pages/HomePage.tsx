@@ -4,6 +4,8 @@ import profilepic from '../assets/profilepic.jpg';
 import FullstackProjects from '../components/FullstackProjects';
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 import { IoMdMail } from "react-icons/io"
+import VideoLoop from "../components/VideoLoop";
+import ProjectSliderVid from '../components/ProjectSliderVid';
 
 
 
@@ -92,6 +94,12 @@ const HomePage = () => {
                     </p>
 
                 </div>
+            </div>
+            <div>
+                <VideoLoop />
+            </div>
+            <div>
+                <ProjectSliderVid />
             </div>
             <footer>
                 Designed and built by Rishabh Sharma
