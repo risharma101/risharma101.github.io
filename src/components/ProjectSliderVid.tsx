@@ -67,7 +67,7 @@ const ProjectSliderVid: React.FC = ({ }) => {
 
   return (
     <div className='project-section'>
-      <div className='project-slider'>
+      <div className='project-slider' style={{cursor: 'grab'}}>
         <Slider {...settings}>
           {videoUrls.map((videoFile, index) => (
             <div key={index} className="slide-container">
