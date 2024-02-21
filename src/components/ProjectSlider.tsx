@@ -3,26 +3,75 @@ import "slick-carousel/slick/slick-theme.css";
 import './ProjectSlider.css';
 import React from 'react';
 import Slider from 'react-slick';
+import csco_gif from '../assets/csco-gif.gif';
+import rishgpt_img from '../assets/rishgpt-img.png';
+// @ts-ignore
+import rishgpt_vid from '../assets/rishgpt-vid.mov';
+import notefy_img from '../assets/notefy-img.png';
+import notefy_img2 from '../assets/notefy-img2.png';
+// @ts-ignore
+import notefy_vid from '../assets/notefy-vid.mov';
+import seamcarver_img from '../assets/seamcarver-img.png';
+// @ts-ignore
+import seamcarver_vid from '../assets/seamcarver-vid.mov';
 
-export interface Slide {
-  video?: string;
-  img: string;
-  caption: string;
-  // Add more fields here as needed, e.g., id, description, etc.
-}
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa"
+import { motion } from "framer-motion";
+import { SlideData } from "../types";
 
-// Props interface
+import Project_csco from "./projects/Project_csco";
+
+
 interface ProjectSliderProps {
-  slides: Slide[]; // Array of Slide objects
+  onSlideClick: (slideData: SlideData) => void;
 }
 
-const ProjectSlider: React.FC<ProjectSliderProps> = ({ slides }) => {
+const slidesData: SlideData[] = [
+  { img: csco_gif, title: "CSCO", description: "A Social Gallery", component: Project_csco },
+  { img: rishgpt_img, title: "RishGPT", description: "Custom ChatGPT UI", },
+  { img: notefy_img, title: "Notefy", description: "Chrome Extension to Summarize Webpages", },
+  { img: seamcarver_img, title: "SeamCarver", description: "An Image-size Reducer using Seam Carving Techniques", },
+  // Add more slides with titles and descriptions
+];
+
+
+interface ArrowProps {
+  className?: string;
+  style?: React.CSSProperties;
+  onClick?: () => void;
+}
+
+const NextArrow: React.FC<ArrowProps> = ({ className, style, onClick }) => (
+  <motion.div
+    className={className}
+    onClick={onClick}
+    whileHover={{ scale: 1.4 }}
+    whileTap={{ scale: 0.8 }}
+  >
+    <FaArrowRight size={20} style={{ ...style, display: 'block' }} color="white" />
+  </motion.div>
+);
+
+const PrevArrow: React.FC<ArrowProps> = ({ className, style, onClick }) => (
+  <motion.div
+    className={className}
+    onClick={onClick}
+    whileHover={{ scale: 1.4 }}
+    whileTap={{ scale: 0.8 }}
+  >
+    <FaArrowLeft size={20} style={{ ...style, display: 'block' }} color="white" />
+  </motion.div>
+);
+
+const ProjectSlider: React.FC<ProjectSliderProps> = ({ onSlideClick }) => {
   // Slider settings
   const settings = {
     className: "center",
-    centerMode: true,
+    // centerMode: true,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     infinite: true,
-    centerPadding: '15%',
+    centerPadding: '10%',
     slidesToShow: 1,
     speed: 500,
     focusOnSelect: true,
@@ -42,21 +91,21 @@ const ProjectSlider: React.FC<ProjectSliderProps> = ({ slides }) => {
     ]
   };
 
-  // Image data (replace with your images and captions)
-
   return (
     <div className='project-section'>
-      <div className='project-slider'>
+      <div className='project-slider' style={{ cursor: 'grab' }} >
         <Slider {...settings}>
-          {slides.map((slide, index) => (
-            <div key={index} className="slide-container">
-              <div className="slide-content">
-                <img /*style={{ width: '200px' }}*/ src={slide.img} alt={`Slide ${index + 1}`} />
-                <p>{slide.caption}</p>
+          {slidesData.map((slide, index) => (
+            <div key={index} className="slide-container" onClick={() => onSlideClick(slide)}>
+              <div className="slide-content" >
+                <h3 style={{ padding: '5px 0px 0px' }}>{slide.title}</h3>
+                <p style={{ padding: '5px' }}>{slide.description}</p>
+                <motion.img src={slide.img} style={{ height: '500px', maxHeight: '500px' }} whileHover={{ scale: 0.95 }}
+                  whileTap={{ scale: 0.8 }} onClick={() => onSlideClick(slidesData[index])} />
               </div>
-
             </div>
           ))}
+
         </Slider>
       </div>
     </div>

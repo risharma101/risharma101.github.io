@@ -3,14 +3,11 @@ import './HomePage.css';
 import profilepic from '../assets/profilepic.jpg';
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 import { IoMdMail } from "react-icons/io"
-import ProjectSliderVid from '../components/ProjectSliderVid';
+import ProjectSlider from '../components/ProjectSlider';
 import { motion } from "framer-motion";
 import Popup from '../components/Popup';
+import {SlideData} from '../types';
 
-interface SlideData {
-    title: string;
-    description: string;
-}
 
 const HomePage = () => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -32,13 +29,14 @@ const HomePage = () => {
         };
     }, [isPopupOpen]);
 
-    const togglePopup = () => {
-        setIsPopupOpen(!isPopupOpen);
-    };
+    const handleSlideClick = (slideData?: SlideData) => {
+        setCurrentSlideData(slideData || null);
+        setIsPopupOpen(true);
+      };
     return (
         <>
             <div className='title'>
-                <h2>Rishabh Sharma</h2>
+                <h1>Rishabh Sharma</h1>
 
             </div>
             <div className='about-section'>
@@ -65,9 +63,9 @@ const HomePage = () => {
                 </div>
             </div>
             <div style={{ textAlign: 'center' }}>
-                <h3>Featured Projects </h3>
-                <ProjectSliderVid onSlideClick={togglePopup} />
-                {isPopupOpen && (
+                <h2>Featured Projects </h2>
+                <ProjectSlider onSlideClick={handleSlideClick} />
+                {isPopupOpen && currentSlideData && (
                     <>
                         <div style={{
                             position: 'fixed',
@@ -77,8 +75,8 @@ const HomePage = () => {
                             height: '100%',
                             backgroundColor: 'rgba(0, 0, 0, 0.5)',
                             zIndex: 999, // Ensure it's just below the popup
-                        }} onClick={togglePopup}></div> {/* This div serves as the overlay */}
-                        <Popup onClose={togglePopup} />
+                        }} onClick={() => setIsPopupOpen(false)}></div> {/* This div serves as the overlay */}
+                        <Popup onClose={() => setIsPopupOpen(false)} slideData={currentSlideData} />
                     </>
                 )}
             </div>

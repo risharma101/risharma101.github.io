@@ -61,7 +61,7 @@
     .project-slider {
       max-width: 80vw;
     }
-    .slide-content img {
-      height: 30vw;
+    .slide-container img {
+      height: 20vw;
     }
 }
