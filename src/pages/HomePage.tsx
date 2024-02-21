@@ -1,14 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './HomePage.css';
 import profilepic from '../assets/profilepic.jpg';
-import FullstackProjects from '../components/FullstackProjects';
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 import { IoMdMail } from "react-icons/io"
 import ProjectSliderVid from '../components/ProjectSliderVid';
+import { motion } from "framer-motion";
+import Popup from '../components/Popup';
 
-
+interface SlideData {
+    title: string;
+    description: string;
+}
 
 const HomePage = () => {
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [currentSlideData, setCurrentSlideData] = useState<SlideData | null>(null);
+
+
+    useEffect(() => {
+        if (isPopupOpen) {
+            // When the popup is open, add `overflow: hidden` to the body to disable scrolling
+            document.body.style.overflow = 'hidden';
+        } else {
+            // Remove `overflow: hidden` when the popup is closed to re-enable scrolling
+            document.body.style.overflow = '';
+        }
+
+        // Cleanup function to ensure we re-enable scrolling when the component unmounts
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [isPopupOpen]);
+
+    const togglePopup = () => {
+        setIsPopupOpen(!isPopupOpen);
+    };
     return (
         <>
             <div className='title'>
@@ -17,86 +43,44 @@ const HomePage = () => {
             </div>
             <div className='about-section'>
                 <div className='about-column'>
-                    <a href='https://github.com/risharma101' target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <motion.a href='https://github.com/risharma101' target="_blank" rel="noopener noreferrer" aria-label="GitHub" whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
                         <FaGithub size={40} />
-                    </a>
+                    </motion.a>
                     <p className='link-descriptor'>GitHub</p>
-                    <a href='https://www.linkedin.com/in/rishabhsharma101/' target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <motion.a href='https://www.linkedin.com/in/rishabhsharma101/' target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
                         <FaLinkedin size={40} />
-                    </a>
+                    </motion.a>
                     <p className='link-descriptor'>LinkedIn</p>
 
-                    <a href='mailto:rishabhsharma@ucla.edu' target="_blank" rel="noopener noreferrer" aria-label="Mail">
+                    <motion.a href='mailto:rishabhsharma@ucla.edu' target="_blank" rel="noopener noreferrer" aria-label="Mail" whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
                         <IoMdMail size={40} />
-                    </a>
+                    </motion.a>
                     <p className='link-descriptor'>rishabhsharma@ucla.edu</p>
                 </div>
                 <div className='about-img'>
-                    <img src={profilepic} alt="Your Name" />
+                    <motion.img src={profilepic} alt="Your Name" whileHover={{ scale: 1.1 }} />
                 </div>
                 <div className='about-column'>
-                    <h6>I'm Rishabh!. I'm a CS major at UCLA with interest and experience in Backend & Full-Stack Software Development and AI/ML Technologies.</h6>
+                    <motion.h6 whileHover={{ scale: 1.1 }}>I'm Rishabh!. I'm a CS major at UCLA with interest and experience in Backend & Full-Stack Software Development and AI/ML Technologies.</motion.h6>
                 </div>
             </div>
-            {/* <div className="skills-section">
-                <h2>Skills</h2>
-                <div style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    justifyContent: 'center',
-                    gap: '20px', // Adjusts the space between logos
-                }}>
-                    <div>
-                        <SkillButton svg={JavaLogo} label="Java" />
-                    </div>
-                    <div>
-                        <SkillButton svg={CPPLogo} label="C++" />
-                    </div>
-                    <div>
-                        <SkillButton svg={JavaLogo} label="Java" />
-                    </div>
-                    <div>
-                        <SkillButton svg={JavaLogo} label="Java" />
-                    </div>
-                    <div>
-                        <SkillButton svg={JavaLogo} label="Java" />
-                    </div>
-                    <div>
-                        <SkillButton svg={JavaLogo} label="Java" />
-                    </div>
-                </div>
-            </div> */}
-
-            {/* <div className='project-section'>
-                <h3>Current Projects</h3>
-                <div className='project-slider'>
-                    <FullstackProjects />
-                </div>
-
-            </div> */}
-
-            {/* <div className='researchskills-section'>
-                <div className='researchskills-column'>
-                    <h3>Research</h3>
-                    <p>
-                    </p>
-
-                </div>
-                <div className='researchskills-column'>
-                    <h3>Skills</h3>
-                    <p>
-                        <b>Languages:</b> C++, C,  Python, Java, JavaScript, SQL<br />
-                        <b>UI Frameworks:</b> React, Express, Django, Flask, Flutter <br />
-                        <b>AI Frameworks:</b>OpenCV, PyTorch, TensorFlow<br />
-                        <b>Cloud/Containers:</b> Docker, Kubernetes, Google Cloud<br />
-                        <b>General Tools:</b> Git, Bash, VSCode, Xcode, IntelliJ
-                    </p>
-
-                </div>
-        </div> */}
-            <div style={{textAlign: 'center'}}>
+            <div style={{ textAlign: 'center' }}>
                 <h3>Featured Projects </h3>
-                <ProjectSliderVid />
+                <ProjectSliderVid onSlideClick={togglePopup} />
+                {isPopupOpen && (
+                    <>
+                        <div style={{
+                            position: 'fixed',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '100%',
+                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                            zIndex: 999, // Ensure it's just below the popup
+                        }} onClick={togglePopup}></div> {/* This div serves as the overlay */}
+                        <Popup onClose={togglePopup} />
+                    </>
+                )}
             </div>
             <footer>
                 Designed and built by Rishabh Sharma

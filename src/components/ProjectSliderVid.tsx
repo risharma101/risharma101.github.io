@@ -3,16 +3,20 @@ import "slick-carousel/slick/slick-theme.css";
 import './ProjectSlider.css';
 import React from 'react';
 import Slider from 'react-slick';
-import cscodemo from '../assets/csco-demo.png';
-import chatclonedemo from '../assets/chatclone-demo.png';
+import csco_gif from '../assets/csco-gif.gif';
+import rishgpt_img from '../assets/rishgpt-img.png';
 // @ts-ignore
-import percolation_vid from '../assets/percolation-demo-vid.mov';
+import rishgpt_vid from '../assets/rishgpt-vid.mov';
+import notefy_img from '../assets/notefy-img.png';
+import notefy_img2 from '../assets/notefy-img2.png';
 // @ts-ignore
-import seamcarving_vid from '../assets/seamcarving-demo-vid.mov';
+import notefy_vid from '../assets/notefy-vid.mov';
+import seamcarver_img from '../assets/seamcarver-img.png';
 // @ts-ignore
-import peachparty_vid from '../assets/peachparty-demo-vid.mov';
-// @ts-ignore
-import notefy_vid from '../assets/notefy-demo-vid.mov';
+import seamcarver_vid from '../assets/seamcarver-vid.mov';
+
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa"
+import { motion } from "framer-motion";
 
 // export interface Slide {
 //   video: string;
@@ -24,14 +28,45 @@ import notefy_vid from '../assets/notefy-demo-vid.mov';
 // interface ProjectSliderProps {
 //   slides: Slide[]; // Array of Slide objects
 // }
+interface ProjectSliderProps {
+  onSlideClick: () => void;
+}
 
+interface ArrowProps {
+  className?: string;
+  style?: React.CSSProperties;
+  onClick?: () => void;
+}
 
+const NextArrow: React.FC<ArrowProps> = ({ className, style, onClick }) => (
+  <motion.div
+    className={className}
+    onClick={onClick}
+    whileHover={{ scale: 1.4 }}
+    whileTap={{ scale: 0.8 }}
+  >
+    <FaArrowRight size={20} style={{ ...style, display: 'block' }} color="white" />
+  </motion.div>
+);
 
-const ProjectSliderVid: React.FC = ({ }) => {
+const PrevArrow: React.FC<ArrowProps> = ({ className, style, onClick }) => (
+  <motion.div
+    className={className}
+    onClick={onClick}
+    whileHover={{ scale: 1.4 }}
+    whileTap={{ scale: 0.8 }}
+  >
+    <FaArrowLeft size={20} style={{ ...style, display: 'block' }} color="white" />
+  </motion.div>
+);
+
+const ProjectSliderVid: React.FC<ProjectSliderProps> = ({onSlideClick }) => {
   // Slider settings
   const settings = {
     className: "center",
     // centerMode: true,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     infinite: true,
     centerPadding: '15%',
     slidesToShow: 1,
@@ -54,12 +89,10 @@ const ProjectSliderVid: React.FC = ({ }) => {
   };
 
   const videoUrls = [
-    percolation_vid,
-    peachparty_vid,
-    seamcarving_vid,
-    notefy_vid,
-    cscodemo,
-    chatclonedemo,
+    csco_gif,
+    rishgpt_img,
+    notefy_img,
+    seamcarver_img
     // Add more video URLs as needed
   ];
 
@@ -67,17 +100,18 @@ const ProjectSliderVid: React.FC = ({ }) => {
 
   return (
     <div className='project-section'>
-      <div className='project-slider' style={{cursor: 'grab'}}>
+      <div className='project-slider' style={{ cursor: 'grab' }} >
         <Slider {...settings}>
           {videoUrls.map((videoFile, index) => (
             <div key={index} className="slide-container">
-              <div className="slide-content">
-              {videoFile.substring(videoFile.length-3) == "mov" && (<video src={videoFile} autoPlay loop style={{ width: '100%', maxHeight: '500px' }} />)}
-              {videoFile.substring(videoFile.length-3) != "mov" && (<img src={videoFile} style={{ height: '500px', maxHeight: '500px' }}/>)}
-              </div>
+              <motion.div className="slide-content" whileHover={{ scale: 0.95 }}
+                whileTap={{ scale: 0.8 }} onClick={onSlideClick}>
+                {videoFile.substring(videoFile.length - 3) == "mov" && (<video src={videoFile} controls loop style={{ width: '100%', maxHeight: '500px' }} />)}
+                {videoFile.substring(videoFile.length - 3) != "mov" && (<img src={videoFile} style={{ height: '500px', maxHeight: '500px' }} />)}
+              </motion.div>
             </div>
           ))}
-          
+
         </Slider>
       </div>
     </div>

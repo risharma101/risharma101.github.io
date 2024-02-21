@@ -49,6 +49,14 @@
     opacity: 1 !important; /* Override to make the active slide fully visible */
   }
 
+  .slick-arrow.slick-next:before {
+    content: "";
+  }
+  
+  .slick-arrow.slick-prev:before {
+    content: "";
+  }
+
   @media (max-width: 1100px) {
     .project-slider {
       max-width: 80vw;

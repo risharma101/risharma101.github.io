@@ -82,7 +82,10 @@ footer {
     }
 
     .about-column a {
-        padding: 5px;
+        padding: 0px 15px 10px;
+    }
+    .about-column p {
+        display: none;
     }
 }
 
@@ -122,4 +125,10 @@ body {
     height: 180px;
     width: 40vw;
     /* Centers the text inside each box */
+}
+
+.popup-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

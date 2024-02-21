@@ -1,5 +1,6 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import React, { useState, useEffect, CSSProperties } from 'react';
+import { motion } from "framer-motion";
 
 const NavBar: React.FC = () => {
   let navigate = useNavigate();
@@ -52,18 +53,22 @@ const NavBar: React.FC = () => {
 
   return (
     <div id="navbar" /*style={navBarStyle}*/>
-      <button
+      <motion.button
         style={getButtonStyle("/")}
         onClick={() => navigate("/")}
+        whileHover={{ scale: 1.2 }} 
+        whileTap={{ scale: 0.8 }}
       >
         Home
-      </button>
-      <button
+      </motion.button>
+      <motion.button
         style={getButtonStyle("/portfolio")}
         onClick={() => navigate("/portfolio")}
+        whileHover={{ scale: 1.2 }} 
+        whileTap={{ scale: 0.8 }}
       >
         Portfolio
-      </button>
+      </motion.button>
     </div>
   );
 };
