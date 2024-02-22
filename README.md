@@ -61,7 +61,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- CONTACT -->
 ## Contact
-Rishabh Sharma - rishabhsharma@ucla.edu
+Rishabh Sharma: rishabhsharma@ucla.edu
+
 Website: [rishabhsharma.xyz](rishabhsharma.xyz)
 
 
