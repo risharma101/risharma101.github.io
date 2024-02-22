@@ -6,6 +6,9 @@ A personal portfolio of my projects and skills built with TypeScript and React.j
 
 
 ## About this Project
+### Description/Motivation
+A personal portfolio to showcase my projects and skills. Built for professional use and for experience with frontend development and web design.
+
 ### Built With
 #### Tech Stack
 - [![Typescript][Typescript]][Typescript-url]
@@ -15,10 +18,20 @@ A personal portfolio of my projects and skills built with TypeScript and React.j
 #### Hosting
 - [![GithubPages][GithubPages]][GithubPages-url]
   
-### Description/Motivation
-A personal portfolio to showcase my projects and skills. Built for professional use and for experience with frontend development and web design.
+<!-- ROADMAP -->
+## Roadmap
+- [X] Created home page and navigation bar
+  - [X] Created about section with social links
+  - [X] Created featured project section with project slider and project popups
+- [X] Hosted with GitHub Pages and added custom domain
+- [ ] Create portfolio page
+  - [ ] Add section for all projects
+  - [ ] Add section for skills
+  - [ ] Add section for research
+  - [ ] Add section for current work
+- [ ] Add cool UI components
 
-## To use as template for your portfolio
+## To play around with
 ### Prerequisites
 * npm
   ```sh
@@ -42,19 +55,6 @@ A personal portfolio to showcase my projects and skills. Built for professional 
    npm run build
    ```
 
-<!-- ROADMAP -->
-## Roadmap
-- [X] Created home page and navigation bar
-  - [X] Created about section with social links
-  - [X] Created featured project section with project slider and project popups
-- [X] Hosted with GitHub Pages and added custom domain
-- [ ] Create portfolio page
-  - [ ] Add section for all projects
-  - [ ] Add section for skills
-  - [ ] Add section for research
-  - [ ] Add section for current work
-- [ ] Add cool UI components
-
 <!-- LICENSE -->
 ## License
 Distributed under the MIT License. See `LICENSE.txt` for more information.
@@ -70,8 +70,8 @@ Website: [rishabhsharma.xyz](rishabhsharma.xyz)
 * [GitHub Pages Help](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
 * [README Template](https://github.com/othneildrew/Best-README-Template)
    
-[Typescript]: [https://img.shields.io/badge/Express.js-404D59?style=for-the-badge](https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white)
-[Typescript-url]: [https://expressjs.org/](https://www.typescriptlang.org/)
+[Typescript]: https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white
+[Typescript-url]: https://www.typescriptlang.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [GithubPages]: https://img.shields.io/badge/GitHub%20Pages-222222.svg?style=for-the-badge&logo=GitHub-Pages&logoColor=white
