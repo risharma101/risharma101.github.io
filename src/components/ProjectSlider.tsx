@@ -3,23 +3,19 @@ import "slick-carousel/slick/slick-theme.css";
 import './ProjectSlider.css';
 import React from 'react';
 import Slider from 'react-slick';
-import csco_gif from '../assets/csco-gif.gif';
-import rishgpt_img from '../assets/rishgpt-img.png';
-// @ts-ignore
-import rishgpt_vid from '../assets/rishgpt-vid.mov';
-import notefy_img from '../assets/notefy-img.png';
-import notefy_img2 from '../assets/notefy-img2.png';
-// @ts-ignore
-import notefy_vid from '../assets/notefy-vid.mov';
-import seamcarver_img from '../assets/seamcarver-img.png';
-// @ts-ignore
-import seamcarver_vid from '../assets/seamcarver-vid.mov';
-
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa"
 import { motion } from "framer-motion";
 import { SlideData } from "../types";
 
+import csco_img from '../assets/csco-img.gif';
+import rishgpt_img from '../assets/rishgpt-img.png';
+import notefy_img from '../assets/notefy-img.png';
+import seamcarver_img from '../assets/seamcarver-img.png';
+
 import Project_csco from "./projects/Project_csco";
+import Project_notefy from "./projects/Project_notefy";
+import Project_rishgpt from "./projects/Project_rishgpt";
+import Project_seamcarver from "./projects/Project_seamcarver";
 
 
 interface ProjectSliderProps {
@@ -27,10 +23,10 @@ interface ProjectSliderProps {
 }
 
 const slidesData: SlideData[] = [
-  { img: csco_gif, title: "CSCO", description: "A Social Gallery", component: Project_csco },
-  { img: rishgpt_img, title: "RishGPT", description: "Custom ChatGPT UI", },
-  { img: notefy_img, title: "Notefy", description: "Chrome Extension to Summarize Webpages", },
-  { img: seamcarver_img, title: "SeamCarver", description: "An Image-size Reducer using Seam Carving Techniques", },
+  { img: csco_img, title: "CSCO", description: "Your Personal Media Board", component: Project_csco },
+  { img: rishgpt_img, title: "RishGPT", description: "A Custom ChatGPT UI", component: Project_rishgpt},
+  { img: notefy_img, title: "Notefy", description: "A Chrome Extension to Summarize Webpages!", component: Project_notefy },
+  { img: seamcarver_img, title: "SeamCarver", description: "An Image Reduction Application using Seam Carving Techniques", component: Project_seamcarver},
   // Add more slides with titles and descriptions
 ];
 
@@ -93,15 +89,15 @@ const ProjectSlider: React.FC<ProjectSliderProps> = ({ onSlideClick }) => {
 
   return (
     <div className='project-section'>
-      <div className='project-slider' style={{ cursor: 'grab' }} >
+      <div className='project-slider' >
         <Slider {...settings}>
           {slidesData.map((slide, index) => (
-            <div key={index} className="slide-container" onClick={() => onSlideClick(slide)}>
+            <div key={index} className="slide-container">
               <div className="slide-content" >
-                <h3 style={{ padding: '5px 0px 0px' }}>{slide.title}</h3>
-                <p style={{ padding: '5px' }}>{slide.description}</p>
-                <motion.img src={slide.img} style={{ height: '40vw', maxHeight: '500px' }} whileHover={{ scale: 0.95 }}
-                  whileTap={{ scale: 0.8 }} onClick={() => onSlideClick(slidesData[index])} />
+                <h3>{slide.title}</h3>
+                <p>{slide.description}</p>
+                <motion.img className="slide-img" src={slide.img} whileHover={{ scale: 0.95, color: '#181818' }}
+                  whileTap={{ scale: 0.8 }} onClick={() => onSlideClick(slide)} />
               </div>
             </div>
           ))}

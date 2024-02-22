@@ -3,9 +3,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* align-items: center; */
-  /* text-align: center; */
-  margin: 0px 100px;
 }
 
 .project-slider {
@@ -34,8 +31,20 @@
     /* Take up full height to allow for vertical centering */
 }
 
-.slide-content img {
-  height: 400px;
+.slide-content .slide-img {
+  height: 50vw;
+  max-height: 500px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.slide-content h3 {
+  margin-top: 10px;
+  margin-bottom: 10px; /* Adjust as needed */
+}
+
+.slide-content p {
+  margin-top: 0; /* Adjust as needed */
 }
 
 /* Target all slides and apply a fade effect */
@@ -60,8 +69,5 @@
   @media (max-width: 1100px) {
     .project-slider {
       max-width: 80vw;
-    }
-    .slide-container img {
-      height: 20vw;
     }
 }

@@ -28,6 +28,7 @@ const Popup: React.FC<PopupProps> = ({ onClose, slideData }) => {
                 exit={{ scale: 0 }}
                 transition={{ duration: 0.5 }}
                 style={{
+                    position: 'relative',
                     width: '80%', // Adjust width as needed
                     height: '80%',
                     // maxHeight: '70%', // Adjust height as needed
@@ -38,10 +39,10 @@ const Popup: React.FC<PopupProps> = ({ onClose, slideData }) => {
                     boxShadow: '0 4px 6px rgba(0, 0, 0, 2)', // Optional: adds a subtle shadow
                 }}
             >
-                <motion.button onClick={onClose} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} style={{ cursor: 'pointer', backgroundColor: 'transparent', color: 'white', border: 'none', fontSize: 24, alignItems: 'right' }}>X</motion.button>
-                <h3>{slideData.title}</h3>
+                <motion.button onClick={onClose} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} style={{ cursor: 'pointer', backgroundColor: 'transparent', color: 'white', border: 'none', fontSize: '24px', fontStyle: 'bold',  position: 'absolute', top: '20px', right: '20px' }}>X</motion.button>
+                {/* <h3>{slideData.title}</h3>
                 <p>{slideData.description}</p>
-                <img src={slideData.img} style={{ height: '500px', maxHeight: '500px' }} />
+                <img src={slideData.img} style={{ height: '500px', maxHeight: '500px' }} /> */}
                 {slideData.component && <slideData.component />}
 
             </motion.div>

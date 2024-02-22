@@ -56,10 +56,10 @@ const HomePage = () => {
                     <p className='link-descriptor'>rishabhsharma@ucla.edu</p>
                 </div>
                 <div className='about-img'>
-                    <motion.img src={profilepic} alt="Your Name" whileHover={{ scale: 1.1 }} />
+                    <motion.img src={profilepic} alt="Your Name" /*whileHover={{ scale: 1.1 }}*/ />
                 </div>
                 <div className='about-column'>
-                    <motion.h6 whileHover={{ scale: 1.1 }}>I'm Rishabh!. I'm a CS major at UCLA with interest and experience in Backend & Full-Stack Software Development and AI/ML Technologies.</motion.h6>
+                    <motion.h6 /*whileHover={{ scale: 1.1 }}*/>I'm Rishabh! I'm a CS major at UCLA with interest and experience in Backend & Full-Stack Software Development and AI/ML Technologies.</motion.h6>
                 </div>
             </div>
             <div style={{ textAlign: 'center' }}>
@@ -73,7 +73,7 @@ const HomePage = () => {
                             left: 0,
                             width: '100%',
                             height: '100%',
-                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
                             zIndex: 999, // Ensure it's just below the popup
                         }} onClick={() => setIsPopupOpen(false)}></div> {/* This div serves as the overlay */}
                         <Popup onClose={() => setIsPopupOpen(false)} slideData={currentSlideData} />
