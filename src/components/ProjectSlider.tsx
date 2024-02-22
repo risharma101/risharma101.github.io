@@ -100,7 +100,7 @@ const ProjectSlider: React.FC<ProjectSliderProps> = ({ onSlideClick }) => {
               <div className="slide-content" >
                 <h3 style={{ padding: '5px 0px 0px' }}>{slide.title}</h3>
                 <p style={{ padding: '5px' }}>{slide.description}</p>
-                <motion.img src={slide.img} style={{ height: '500px', maxHeight: '500px' }} whileHover={{ scale: 0.95 }}
+                <motion.img src={slide.img} style={{ height: '40vw', maxHeight: '500px' }} whileHover={{ scale: 0.95 }}
                   whileTap={{ scale: 0.8 }} onClick={() => onSlideClick(slidesData[index])} />
               </div>
             </div>

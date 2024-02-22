@@ -61,14 +61,14 @@ const NavBar: React.FC = () => {
       >
         Home
       </motion.button>
-      <motion.button
+      {/* <motion.button
         style={getButtonStyle("/portfolio")}
         onClick={() => navigate("/portfolio")}
         whileHover={{ scale: 1.2 }} 
         whileTap={{ scale: 0.8 }}
       >
         Portfolio
-      </motion.button>
+      </motion.button> */}
     </div>
   );
 };
