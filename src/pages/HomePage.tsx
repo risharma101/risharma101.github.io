@@ -1,89 +1,163 @@
-import React, { useEffect, useState } from 'react';
-import './HomePage.css';
-import profilepic from '../assets/profilepic.jpg';
-import { FaGithub, FaLinkedin } from "react-icons/fa"
-import { IoMdMail } from "react-icons/io"
-import ProjectSlider from '../components/ProjectSlider';
+import React, { useEffect, useState } from "react";
+import "./HomePage.css";
+import profilepic from "../assets/profilepic.jpg";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
+import ProjectSlider from "../components/ProjectSlider";
 import { motion } from "framer-motion";
-import Popup from '../components/Popup';
-import {SlideData} from '../types';
-
+import Popup from "../components/Popup";
+import { SlideData } from "../types";
+import BuildingBlocks from "../components/BuildingBlocks";
 
 const HomePage = () => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
-    const [currentSlideData, setCurrentSlideData] = useState<SlideData | null>(null);
-
+    const [currentSlideData, setCurrentSlideData] = useState<SlideData | null>(
+        null
+    );
 
     useEffect(() => {
         if (isPopupOpen) {
-            // When the popup is open, add `overflow: hidden` to the body to disable scrolling
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = "hidden";
         } else {
-            // Remove `overflow: hidden` when the popup is closed to re-enable scrolling
-            document.body.style.overflow = '';
+            document.body.style.overflow = "";
         }
 
-        // Cleanup function to ensure we re-enable scrolling when the component unmounts
         return () => {
-            document.body.style.overflow = '';
+            document.body.style.overflow = "";
         };
     }, [isPopupOpen]);
 
     const handleSlideClick = (slideData?: SlideData) => {
         setCurrentSlideData(slideData || null);
         setIsPopupOpen(true);
-      };
+    };
+
+    const titleVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.12,
+            },
+        },
+    };
+
+    const letterVariants = {
+        hidden: { y: 50, opacity: 0 },
+        visible: { y: 0, opacity: 1 },
+    };
+
     return (
-        <>
-            <div className='title'>
-                <h1>Rishabh Sharma</h1>
-
+        <div className="home-page">
+            {/* Profile Picture */}
+            <div className="profile-icon-container">
+                <motion.div
+                    className="profile-circle"
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                    whileHover={{
+                        scale: 1.1,
+                        boxShadow: "0px 0px 12px rgba(255,255,255,0.3)",
+                    }}
+                >
+                    <img src={profilepic} alt="Rishabh Sharma" />
+                </motion.div>
             </div>
-            <div className='about-section'>
-                <div className='about-column'>
-                    <motion.a href='https://github.com/risharma101' target="_blank" rel="noopener noreferrer" aria-label="GitHub" whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
-                        <FaGithub size={40} />
-                    </motion.a>
-                    <p className='link-descriptor'>GitHub</p>
-                    <motion.a href='https://www.linkedin.com/in/rishabhsharma101/' target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
-                        <FaLinkedin size={40} />
-                    </motion.a>
-                    <p className='link-descriptor'>LinkedIn</p>
 
-                    <motion.a href='mailto:rishabhsharma@ucla.edu' target="_blank" rel="noopener noreferrer" aria-label="Mail" whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
-                        <IoMdMail size={40} />
-                    </motion.a>
-                    <p className='link-descriptor'>rishabhsharma@ucla.edu</p>
-                </div>
-                <div className='about-img'>
-                    <motion.img src={profilepic} alt="Your Name" /*whileHover={{ scale: 1.1 }}*/ />
-                </div>
-                <div className='about-column'>
-                    <motion.h6 /*whileHover={{ scale: 1.1 }}*/>I'm Rishabh! I'm a CS major at UCLA with interest and experience in Backend & Full-Stack Software Development and AI/ML Technologies.</motion.h6>
-                </div>
+            {/* Title */}
+            <motion.div
+                className="title"
+                variants={titleVariants}
+                initial="hidden"
+                animate="visible"
+            >
+                <h1>
+                    {Array.from("Hi, I'm Rishabh!").map((letter, i) => (
+                        <motion.span key={i} variants={letterVariants}>
+                            {letter === " " ? "\u00A0" : letter}
+                        </motion.span>
+                    ))}
+                </h1>
+            </motion.div>
+
+            {/* Bio Section */}
+            <div className="bio-section">
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                >
+                    I'm a Computer Science major at UCLA who loves building! I like working on full-stack projects, especially those involving AI/ML!
+                </motion.p>
             </div>
-            <div style={{ textAlign: 'center' }}>
-                <h2>Featured Projects </h2>
+
+            {/* Links Section */}
+            <div className="links-section">
+                <motion.a
+                    href="https://www.linkedin.com/in/rishabhsharma101/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.8 }}
+                >
+                    <FaLinkedin size={40} />
+                </motion.a>
+                <motion.a
+                    href="https://github.com/risharma101"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.8 }}
+                >
+                    <FaGithub size={40} />
+                </motion.a>
+                <motion.a
+                    href="mailto:rishabhsharma@ucla.edu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Mail"
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.8 }}
+                >
+                    <IoMdMail size={40} />
+                </motion.a>
+            </div>
+
+            {/* Building Blocks */}
+            <BuildingBlocks />
+
+            {/* Featured Projects */}
+            <div className="projects-section" style={{ textAlign: "center" }}>
+                <h2>Some of My Projects</h2>
                 <ProjectSlider onSlideClick={handleSlideClick} />
                 {isPopupOpen && currentSlideData && (
                     <>
-                        <div style={{
-                            position: 'fixed',
-                            top: 0,
-                            left: 0,
-                            width: '100%',
-                            height: '100%',
-                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
-                            zIndex: 999, // Ensure it's just below the popup
-                        }} onClick={() => setIsPopupOpen(false)}></div> {/* This div serves as the overlay */}
-                        <Popup onClose={() => setIsPopupOpen(false)} slideData={currentSlideData} />
+                        <div
+                            style={{
+                                position: "fixed",
+                                top: 0,
+                                left: 0,
+                                width: "100%",
+                                height: "100%",
+                                backgroundColor: "rgba(0, 0, 0, 0.8)",
+                                zIndex: 999,
+                            }}
+                            onClick={() => setIsPopupOpen(false)}
+                        ></div>
+                        <Popup
+                            onClose={() => setIsPopupOpen(false)}
+                            slideData={currentSlideData}
+                        />
                     </>
                 )}
             </div>
-            <footer>
-                Designed and built by Rishabh Sharma
-            </footer>
-        </>
+
+            {/* Footer */}
+            <footer>Designed and built by Rishabh Sharma</footer>
+        </div>
     );
 };
 

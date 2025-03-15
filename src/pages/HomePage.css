@@ -1,134 +1,109 @@
-.title {
+/* General page styling */
+.home-page {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0px;
-}
-
-.about-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0px 40px 50px;
-}
-
-.about-column {
-    max-width: 20vw;
-    display: flex;
-    flex: 1;
     flex-direction: column;
     align-items: center;
-    padding: 0px 40px;
-    font-size: 23px;
-}
-
-.about-column a {
-    display: block;
-    /* Makes each anchor and paragraph element occupy its own line */
-    margin-bottom: 0px;
-    margin-top: 0px;
-    color: #FFFFFF;
-}
-
-.about-column p {
-    font-size: 12px;
-    display: block;
-    /* Makes each anchor and paragraph element occupy its own line */
-    margin-bottom: 20px;
-    /* Adds space below each anchor and paragraph */
-    margin-top: 0px;
-    color: #FFFFFF;
-
-}
-
-
-.about-img {
-    flex: 0 1 auto;
-    width: 200px;
-}
-
-.about-img img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 5px;
-}
-
-.skills-section {
-    /* display: flex; */
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0px 40px;
-}
-
-footer {
-    margin-top: auto;
-    padding: 20px 0px;
-    color: #7f7a7a;
-    width: 100%;
-    text-align: center;
-}
-
-@media (max-width: 1000px) {
-    .about-section {
-        flex-direction: column;
-    }
-
-    .about-column {
-        max-width: 90vw;
-        flex-direction: row;
-    }
-
-    .about-column a {
-        padding: 0px 15px 10px;
-    }
-    .about-column p {
-        display: none;
-    }
-}
-
-body {
     color: white;
-}
-
-/* .project-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 0px 100px;
-} */
-
-.researchskills-section {
-    display: flex;
-    /* Use flexbox layout */
-    justify-content: space-between;
-    /* Space out the child elements */
-    align-items: center;
-    /* Align items vertically */
-    padding: 20px 80px;
-    /* Add some padding around the container */
-    gap: 20px;
-}
-
-.researchskills-column {
-    flex: 1;
-    /* Each box will take up equal amount of space within the container */
+    font-family: "Roboto", sans-serif;
+    background-color: #141414;
+    min-height: 100vh;
+    /* Ensures full height */
     padding: 20px;
-    /* Adds padding inside each box */
-    background-color: #3c3c3c;
-    /* Background color for visual distinction */
-    text-align: center;
-    border-radius: 10px;
-    height: 180px;
-    width: 40vw;
-    /* Centers the text inside each box */
+    /* Adds padding for spacing */
 }
 
-.popup-box {
+/* Profile Picture */
+.profile-icon-container {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+    /* Adjust spacing between profile picture and title */
+}
+
+.profile-circle {
+    width: 70px;
+    /* Small circular profile picture */
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid white;
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.2);
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+    /* Adjust image position inside the circle */
+}
+
+/* Title */
+.title {
+    margin-top: 0;
+    margin-bottom: 0px;
+    /* Adjust spacing between title and bio */
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Bio Section */
+.bio-section {
+    text-align: center;
+    max-width: 60%;
+    /* Limit the width of the bio */
+    margin: 0px 0px 0px 0px;
+    /* Add spacing around the bio */
+    font-size: 16px;
+    line-height: 1.5;
+    color: #dcdcdc;
+    /* Slightly lighter text color for readability */
+}
+
+/* Links Section */
+.links-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    /* Space between icons */
+    margin-top: 20px;
+    /* Add spacing above the links */
+}
+
+.links-section a {
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.links-section a:hover {
+    transform: scale(1.2);
+    /* Smooth scaling effect on hover */
+}
+
+.projects-section {
+    padding-bottom: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .profile-circle {
+        width: 60px;
+        height: 60px;
+    }
+
+    .bio-section {
+        font-size: 14px;
+        max-width: 90%;
+        /* Adjust bio width for smaller screens */
+    }
+
+    .links-section {
+        gap: 20px;
+        /* Reduce spacing between icons on smaller screens */
+    }
 }

@@ -1,0 +1,61 @@
+/* Container for the blocks */
+.building-blocks-container {
+    display: flex;
+    flex-direction: column;
+    /* Stack rows vertically */
+    justify-content: center;
+    /* Center rows vertically */
+    align-items: center;
+    /* Center rows horizontally */
+    height: 300px;
+    /* Adjust height as needed */
+    margin: 40px 0;
+    /* Add spacing around the blocks */
+    position: relative;
+    /* Ensures proper positioning */
+}
+
+/* Each row of blocks */
+.block-row {
+    display: flex;
+    /* Align blocks in a row */
+    justify-content: center;
+    /* Center blocks horizontally */
+    align-items: center;
+    /* Center blocks vertically */
+    margin-bottom: 8px;
+    /* Add spacing between rows */
+    gap: 8px;
+    /* Add spacing between blocks in the same row */
+}
+
+/* Individual block styling */
+.block {
+    width: 80px;
+    height: 80px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: grab;
+    /* Indicates draggable blocks */
+}
+
+.block:active {
+    cursor: grabbing;
+    /* Changes cursor while dragging */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .building-blocks-container {
+        height: 250px;
+        /* Adjust height for smaller screens */
+    }
+
+    .block {
+        width: 60px;
+        height: 60px;
+        /* Smaller blocks for smaller screens */
+    }
+}
