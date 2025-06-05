@@ -102,7 +102,7 @@ const HomePage = () => {
                     whileHover={{ scale: 1.2 }}
                     whileTap={{ scale: 0.8 }}
                 >
-                    <FaLinkedin size={40} />
+                    {FaLinkedin({ size: 40 })}
                 </motion.a>
                 <motion.a
                     href="https://github.com/risharma101"
@@ -112,7 +112,7 @@ const HomePage = () => {
                     whileHover={{ scale: 1.2 }}
                     whileTap={{ scale: 0.8 }}
                 >
-                    <FaGithub size={40} />
+                    {FaGithub({ size: 40 })}
                 </motion.a>
                 <motion.a
                     href="mailto:rishabhsharma@ucla.edu"
@@ -122,7 +122,7 @@ const HomePage = () => {
                     whileHover={{ scale: 1.2 }}
                     whileTap={{ scale: 0.8 }}
                 >
-                    <IoMdMail size={40} />
+                    {IoMdMail({ size: 40 })}
                 </motion.a>
             </div>
 

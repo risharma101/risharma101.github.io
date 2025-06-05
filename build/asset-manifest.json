@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.a2071570.css",
-    "main.js": "/static/js/main.929f6a0d.js",
-    "static/js/592.e2d6b40b.chunk.js": "/static/js/592.e2d6b40b.chunk.js",
+    "main.js": "/static/js/main.d0180df4.js",
+    "static/js/453.1833f2c4.chunk.js": "/static/js/453.1833f2c4.chunk.js",
     "static/media/seamcarver-vid.mov": "/static/media/seamcarver-vid.098b86694d5837cf60fc.mov",
     "static/media/notefy-vid.mov": "/static/media/notefy-vid.0607934084269ddb21eb.mov",
     "static/media/profilepic.jpg": "/static/media/profilepic.577c9fae7d323b6a4fb9.jpg",
@@ -22,11 +22,11 @@
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
     "main.a2071570.css.map": "/static/css/main.a2071570.css.map",
-    "main.929f6a0d.js.map": "/static/js/main.929f6a0d.js.map",
-    "592.e2d6b40b.chunk.js.map": "/static/js/592.e2d6b40b.chunk.js.map"
+    "main.d0180df4.js.map": "/static/js/main.d0180df4.js.map",
+    "453.1833f2c4.chunk.js.map": "/static/js/453.1833f2c4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a2071570.css",
-    "static/js/main.929f6a0d.js"
+    "static/js/main.d0180df4.js"
   ]
 }

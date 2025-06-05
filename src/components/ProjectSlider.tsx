@@ -44,7 +44,7 @@ const NextArrow: React.FC<ArrowProps> = ({ className, style, onClick }) => (
     whileHover={{ scale: 1.4 }}
     whileTap={{ scale: 0.8 }}
   >
-    <FaArrowRight size={20} style={{ ...style, display: 'block' }} color="white" />
+    {FaArrowRight({ size: 20, style: { ...style, display: 'block' }, color: 'white' })}
   </motion.div>
 );
 
@@ -55,7 +55,7 @@ const PrevArrow: React.FC<ArrowProps> = ({ className, style, onClick }) => (
     whileHover={{ scale: 1.4 }}
     whileTap={{ scale: 0.8 }}
   >
-    <FaArrowLeft size={20} style={{ ...style, display: 'block' }} color="white" />
+    {FaArrowLeft({ size: 20, style: { ...style, display: 'block' }, color: 'white' })}
   </motion.div>
 );
 
