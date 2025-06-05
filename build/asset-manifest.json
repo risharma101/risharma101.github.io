@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.029581f5.css",
-    "main.js": "/static/js/main.82151ce9.js",
+    "main.css": "/static/css/main.a2071570.css",
+    "main.js": "/static/js/main.929f6a0d.js",
     "static/js/592.e2d6b40b.chunk.js": "/static/js/592.e2d6b40b.chunk.js",
     "static/media/seamcarver-vid.mov": "/static/media/seamcarver-vid.098b86694d5837cf60fc.mov",
     "static/media/notefy-vid.mov": "/static/media/notefy-vid.0607934084269ddb21eb.mov",
@@ -21,12 +21,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.029581f5.css.map": "/static/css/main.029581f5.css.map",
-    "main.82151ce9.js.map": "/static/js/main.82151ce9.js.map",
+    "main.a2071570.css.map": "/static/css/main.a2071570.css.map",
+    "main.929f6a0d.js.map": "/static/js/main.929f6a0d.js.map",
     "592.e2d6b40b.chunk.js.map": "/static/js/592.e2d6b40b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.029581f5.css",
-    "static/js/main.82151ce9.js"
+    "static/css/main.a2071570.css",
+    "static/js/main.929f6a0d.js"
   ]
 }
