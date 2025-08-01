@@ -126,12 +126,12 @@ const HomePage = () => {
                 </motion.a>
             </div>
 
-            {/* Building Blocks */}
-            <BuildingBlocks />
+            {/* Building Blocks
+            <BuildingBlocks /> */}
 
             {/* Featured Projects */}
             <div className="projects-section" style={{ textAlign: "center" }}>
-                <h2>Some of My Projects</h2>
+                <h2>Featured Projects</h2>
                 <ProjectSlider onSlideClick={handleSlideClick} />
                 {isPopupOpen && currentSlideData && (
                     <>

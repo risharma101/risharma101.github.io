@@ -11,11 +11,13 @@ import csco_img from '../assets/csco-img.gif';
 import rishgpt_img from '../assets/rishgpt-img.png';
 import notefy_img from '../assets/notefy-img.png';
 import seamcarver_img from '../assets/seamcarver-img.png';
+import automail_img from '../assets/automail-img.png';
 
 import Project_csco from "./projects/Project_csco";
 import Project_notefy from "./projects/Project_notefy";
 import Project_rishgpt from "./projects/Project_rishgpt";
 import Project_seamcarver from "./projects/Project_seamcarver";
+import Project_automail from "./projects/Project_automail";
 
 
 interface ProjectSliderProps {
@@ -23,6 +25,7 @@ interface ProjectSliderProps {
 }
 
 const slidesData: SlideData[] = [
+  { img: automail_img, title: "Automail", description: "Personalized Emails at Scale!", component: Project_automail},
   { img: csco_img, title: "CSCO", description: "Your Personal Media Board", component: Project_csco },
   { img: rishgpt_img, title: "RishGPT", description: "A Custom ChatGPT UI", component: Project_rishgpt},
   { img: notefy_img, title: "Notefy", description: "A Chrome Extension to Summarize Webpages!", component: Project_notefy },
