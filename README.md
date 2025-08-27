@@ -1,5 +1,5 @@
 # Personal Portfolio
-A personal portfolio of my projects and skills built with TypeScript and React.js published at [rishabhsharma.xyz]
+A personal portfolio of my projects and skills built with TypeScript and React.js. Previously published at [rishabhsharma.xyz](rishabhsharma.xyz)
 
 ### Preview:
 <img width="855" alt="Screenshot 2024-02-21 at 4 39 49 PM" src="https://github.com/risharma101/risharma101.github.io/assets/52262619/51528519-253b-475f-99a3-00f3518967b2">
