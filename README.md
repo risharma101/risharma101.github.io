@@ -18,43 +18,6 @@ A personal portfolio to showcase my projects and skills. Built for professional 
 #### Hosting
 - [![GithubPages][GithubPages]][GithubPages-url]
   
-<!-- ROADMAP -->
-## Roadmap
-- [X] Created home page and navigation bar
-  - [X] Created about section with social links
-  - [X] Created featured project section with project slider and project popups
-- [X] Hosted with GitHub Pages and added custom domain
-- [ ] Create portfolio page
-  - [ ] Add section for all projects
-  - [ ] Add section for skills
-  - [ ] Add section for research
-  - [ ] Add section for current work
-- [ ] Add cool UI components
-
-## To play around with
-### Prerequisites
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-### Installation
-1. Clone the repo
-   ```sh
-   git clone https://github.com/risharma101/risharma101.github.io
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
-### Launch on localhost
-   ```sh
-   npm start
-   ```
-### Deploy
-   ```sh
-   npm run build
-   ```
-
 <!-- LICENSE -->
 ## License
 Distributed under the MIT License. See `LICENSE.txt` for more information.
@@ -62,9 +25,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 Rishabh Sharma: rishabhsharma@ucla.edu
-
-Website: [rishabhsharma.xyz](rishabhsharma.xyz)
-
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
